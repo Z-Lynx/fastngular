@@ -1,0 +1,13 @@
+.ct p {
+  position: relative; /* Đặt vị trí tương đối để cho ::after pseudo-element */
+  margin: 0; /* Loại bỏ margin mặc định của đoạn văn */
+  padding: 0; /* Loại bỏ padding mặc định của đoạn văn */
+  display: -webkit-box; /* Sử dụng cú pháp mở rộng của hộp linh hoạt */
+  -webkit-line-clamp: 3; /* Số dòng tối đa trước khi bị cắt */
+  -webkit-box-orient: vertical; /* Hướng của hộp linh hoạt (dọc) */
+  overflow: hidden; /* Ẩn nội dung vượt quá số dòng tối đa */
+}
+.ct {
+  height: 300px; /* Chiều cao mong muốn */
+  overflow: hidden; /* Ẩn nội dung vượt quá khung */
+}

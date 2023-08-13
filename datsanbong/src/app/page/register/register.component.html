@@ -1,0 +1,158 @@
+<!-- login.component.html
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body">
+                        <div class="md-5 mt-md-4">
+                            <h2 class="fw-bold mb-2 text-uppercase text-center">Register</h2>
+                            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="ho_ten">Họ & Tên</label>
+                                    <input type="text" id="ho_ten" class="form-control form-control-lg" formControlName="ho_ten" />
+                                </div>
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="sdt">Số Điện Thoại</label>
+                                    <input type="text" id="sdt" class="form-control form-control-lg" formControlName="sdt" />
+                                </div>
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="ngay_sinh">Ngày Sinh</label>
+                                    <input type="date" id="ngay_sinh" class="form-control form-control-lg" formControlName="ngay_sinh" />
+                                </div>
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="email">Email</label>
+                                    <input type="text" id="email" class="form-control form-control-lg" formControlName="email" />
+                                </div>
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="dia_chi">Địa Chỉ</label>
+                                    <input type="text" id="dia_chi" class="form-control form-control-lg" formControlName="dia_chi" />
+                                </div>
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="mat_khau">Password</label>
+                                    <input type="password" id="mat_khau" class="form-control form-control-lg" formControlName="mat_khau" />
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="id_phan_quyen_nguoi_dung" formControlName="id_phan_quyen_nguoi_dung">
+                                    <label class="form-check-label" for="id_phan_quyen_nguoi_dung">
+                                        Đăng ký với tư cách là chủ sân bóng
+                                    </label>
+                                </div>
+                                <div class="text-center">
+                                    <button class="btn btn-outline-light btn-lg" type="submit" [disabled]="registerForm.invalid">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="mt-4">
+                            <p class="mb-0">Có Tài Khoản?
+                                <a class="text-white-50 fw-bold" routerLink="/login">Đăng nhập</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<section class="h-100 h-custom gradient-custom-2">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12">
+                <div class="card bg-dark text-white" style="border-radius: 15px;">
+                    <div class="card-body p-0">
+                        <div class="row g-0"
+                            [ngClass]="{
+                                'd-flex justify-content-center': !this.registerForm.value['id_phan_quyen_nguoi_dung'], 
+                                '': this.registerForm.value['id_phan_quyen_nguoi_dung'] == true
+                            }">
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <h3 class="fw-normal mb-5">Đăng Ký Tài Khoản</h3>
+                                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" for="ho_ten">Họ & Tên</label>
+                                            <input type="text" id="ho_ten" class="form-control form-control-lg" formControlName="ho_ten" />
+                                        </div>
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" for="sdt">Số Điện Thoại</label>
+                                            <input type="text" id="sdt" class="form-control form-control-lg" formControlName="sdt" />
+                                        </div>
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" for="ngay_sinh">Ngày Sinh</label>
+                                            <input type="date" id="ngay_sinh" class="form-control form-control-lg" formControlName="ngay_sinh" />
+                                        </div>
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" for="email">Email</label>
+                                            <input type="email" id="email" class="form-control form-control-lg" formControlName="email" />
+                                        </div>
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" for="dia_chi">Địa Chỉ</label>
+                                            <input type="text" id="dia_chi" class="form-control form-control-lg" formControlName="dia_chi" />
+                                        </div>
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" for="mat_khau">Password</label>
+                                            <input type="password" id="mat_khau" class="form-control form-control-lg" formControlName="mat_khau" />
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="id_phan_quyen_nguoi_dung" formControlName="id_phan_quyen_nguoi_dung">
+                                            <label class="form-check-label" for="id_phan_quyen_nguoi_dung">
+                                                Đăng ký với tư cách là chủ sân bóng
+                                            </label>
+                                        </div>
+
+                                    </form>
+                                    <div class="text-center" *ngIf="this.registerForm.value['id_phan_quyen_nguoi_dung'] != true">
+                                        <button class="btn btn-outline-light btn-lg" type="submit" [disabled]="registerForm.invalid">Register</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="this.registerForm.value['id_phan_quyen_nguoi_dung'] == true" class="col-lg-6 bg-indigo">
+                                <div class="p-5">
+                                    <h3 class="fw-normal mb-5">Thông Tin Doanh Nghiệp</h3>
+                                    <form [formGroup]="registerDNForm" (ngSubmit)="onSubmit()">
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" for="ten_doanh_nghiep">Tên Doanh Nghiệp</label>
+                                            <input type="text" id="ten_doanh_nghiep" class="form-control form-control-lg" formControlName="ten_doanh_nghiep" />
+                                        </div>
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" for="dia_chi">Địa Chỉ</label>
+                                            <input type="text" id="dia_chi" class="form-control form-control-lg" formControlName="dia_chi" />
+                                        </div>
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" for="mo_ta">Mô Tả</label>
+                                            <input type="text" id="mo_ta" class="form-control form-control-lg" formControlName="mo_ta" />
+                                        </div>
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" for="dia_chi">Hình ảnh</label>
+                                            <input class="form-control form-control-lg" 
+                                            id="formFileLg" 
+                                            type="file" 
+                                            multiple accept="image/*"
+                                            formControlName="hinh_anh"
+                                            (change)="onFileChange($event)"
+                                            />
+                                            <div class="small text-muted mt-2">
+                                                Hình ảnh sân bóng
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center pb-5" *ngIf="this.registerForm.value['id_phan_quyen_nguoi_dung'] == true">
+                            <button style="width: 250px;" 
+                                    class="btn btn-outline-light btn-lg" 
+                                    type="submit" 
+                                    (click)="onSubmit()">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

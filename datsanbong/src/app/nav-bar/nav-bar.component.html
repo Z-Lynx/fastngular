@@ -1,0 +1,20 @@
+<div class="mx-5">
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center">
+        <a class="navbar-brand" rel="author" routerLink="/"><i class="fa fa-futbol-o mr-2" aria-hidden="true"></i> Playfield Gooo </a>
+      </div>
+      <div (click)="toggleProfileMenu()" class="dropdown d-flex align-items-center" *ngIf="isLogin">
+        <i class="fa fa-user-circle-o mr-2" aria-hidden="true" style="font-size: 32px;"></i> {{ userName }}
+        <!-- Drop-down menu -->
+        <div *ngIf="isProfileMenuOpen" class="profile-menu">
+          <div class="dropdown-menu d-inline" aria-labelledby="dropdownMenuButton">
+            <a routerLink="/home" class="dropdown-item" href="#">Trang chủ</a>
+            <a routerLink="/cai-dat" class="dropdown-item" href="#">Cài đặt</a>
+            <a (click)="logout()" class="dropdown-item" href="#">Đăng xuất</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

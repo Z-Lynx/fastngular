@@ -1,0 +1,34 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand" rel="author" routerLink="/"><i class="fa fa-futbol-o mr-2" aria-hidden="true"></i> Playfield Gooo </a>
+      <a class="nav-link active" href="/booking">Thuê Sân</a>
+      <a class="nav-link active" href="/contact">Giới Thiệu</a>
+    </div>
+    <div class="d-flex align-items-center" *ngIf="isLogin != true">
+      <a
+        class="nav-link active"
+        href="/login">
+        <button class="btn btn-dark btn-block text-center" type="button">Login</button>
+      </a>
+      <a
+        class="nav-link active"
+        href="/register">
+        Register
+      </a>
+    </div>
+    <div (click)="toggleProfileMenu()" class="dropdown d-flex align-items-center" *ngIf="isLogin">
+      <i class="fa fa-user-circle-o mr-2" aria-hidden="true" style="font-size: 32px;"></i> {{ userName }}
+      <!-- Drop-down menu -->
+      <div *ngIf="isProfileMenuOpen" class="profile-menu">
+        <div class="dropdown-menu d-inline" aria-labelledby="dropdownMenuButton">
+          <a routerLink="/lich-su-dat-lich" class="dropdown-item" href="#" *ngIf="isChuSan != 1">Lịch sử đặt lịch</a>
+          <a routerLink="/quan-ly/doanhnghiep" class="dropdown-item" href="#" *ngIf="isChuSan == 1">Quản lý sân bóng</a>
+          <a routerLink="/trang-ca-nhan" class="dropdown-item" href="#">Trang cá nhân</a>
+          <a routerLink="/cai-dat" class="dropdown-item" href="#">Cài đặt</a>
+          <a (click)="logout()" class="dropdown-item" href="#">Đăng xuất</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

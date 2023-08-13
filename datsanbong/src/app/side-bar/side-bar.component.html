@@ -1,0 +1,40 @@
+<!--LEFT-->
+<div class="min-vh-100 d-flex flex-column flex-shrink-0 p-3" 
+  style="width: 300px;
+  background-color: #fafad2;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  " 
+  bis_skin_checked="1">
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li>
+      <a href="/quan-ly/doanhnghiep" class="nav-link link-dark"
+        [ngClass]="{'active': selectedLink === 'doanhnghiep'}">
+        <i class="fa fa-briefcase" aria-hidden="true"></i>
+        Doanh nghiệp
+      </a>
+    </li>
+    <li>
+      <a href="/quan-ly/sanbong" class="nav-link link-dark"
+        [ngClass]="{'active': selectedLink === 'sanbong'}">
+        <i class="fa fa-futbol-o" aria-hidden="true"></i>
+        Sân bóng
+      </a>
+    </li>
+    <li>
+      <a href="/quan-ly/sanbong" class="nav-link link-dark"
+        [ngClass]="{'active': selectedLink === 'thanhtoan'}">
+        <i class="fa fa-book" aria-hidden="true"></i>
+        Danh sách Đặt sân
+      </a>
+    </li>
+    <li>
+      <a href="/quan-ly/sanbong" class="nav-link link-dark"
+        [ngClass]="{'active': selectedLink === 'caidat'}">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+        Cài đặt
+      </a>
+    </li>
+  </ul>
+  <hr>
+</div>

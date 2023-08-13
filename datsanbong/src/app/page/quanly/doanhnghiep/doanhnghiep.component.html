@@ -1,0 +1,30 @@
+<div class="mb-3">
+    <button class="" style="font-size: 24px;">Thêm doanh nghiệp</button>
+</div>
+<table class="table" style="background-color: #fafad2;">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tên Doanh Nghiệp</th>
+            <th scope="col">Mô Tả</th>
+            <th scope="col">Địa Chỉ</th>
+            <th scope="col">Hình Ảnh</th>
+            <th scope="col">Hành Động</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let doanhNghiepField of doanhNghiepFields">
+            <th scope="row">{{ doanhNghiepField.id }}</th>
+            <td>{{ doanhNghiepField.ten_doanh_nghiep }}</td>
+            <td>{{ doanhNghiepField.mo_ta }}</td>
+            <td>{{ doanhNghiepField.dia_chi }}</td>
+            <td>{{ doanhNghiepField.danh_sach_hinh_anh }}</td>
+            <td>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <button class="mx-1">Sửa</button>
+                    <button>Xóa</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
